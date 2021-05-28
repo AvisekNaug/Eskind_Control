@@ -1,5 +1,5 @@
 /ed_data
 /training_1
 /vi_data
-
+/__pycache__
 *.out
