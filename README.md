@@ -4,7 +4,7 @@ The main set of commands to start the deployment is
 
 clone the repository
 ```bash
-git clone git@github.com:AvisekNaug/Eskind_Control.git
+git clone https://github.com/AvisekNaug/Eskind_Control.git
 ```
 
 navigate to the cloned repo
@@ -15,6 +15,11 @@ cd Eskind_Control
 Create the conda environment
 ```bash
 conda env create --file environment.yml
+```
+
+Upgrade protobuf
+```bash
+pip install --upgrade protobuf
 ```
 
 Launch the script
