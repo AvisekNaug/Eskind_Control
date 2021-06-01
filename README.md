@@ -17,12 +17,17 @@ Create the conda environment
 conda env create --file environment.yml
 ```
 
-Upgrade protobuf
+Activate the environment
+```
+conda activate eskind_pc
+```
+
+Upgrade protobuf(ignore pip's dependency resolver error as long as protobuf is successfully installed)
 ```bash
 pip install --upgrade protobuf
 ```
 
 Launch the script
 ```bash
-nohup python main.py --output_loc > main.out
+nohup python main.py > main.out
 ```
