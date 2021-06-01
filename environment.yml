@@ -1,0 +1,12 @@
+name: eskind_pc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - python=3.6
+  - tensorflow=2.4.0
+  - pip:
+    - git+https://git.isis.vanderbilt.edu/SmartBuildings/bdx.git@v0.2.5
+
