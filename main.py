@@ -22,8 +22,8 @@ def xprt_dm(stpt_gtr, stpt_op_loc):
         stpt_op_loc += '/'
     # time at which to query the data
     query_time = datetime.now(tz=pytz.utc)  # have to provide current data in UTC time zone
-    time_gap_minutes = 15
-    start_time = query_time - timedelta(minutes=time_gap_minutes)
+    time_gap_days = 15
+    start_time = query_time - timedelta(days=time_gap_days)
     try:
         df = bd.get_part_data(start_time,query_time,'4261')
         df.to_csv('ed_data/eskind_backup_v1_0.csv',index=False)
@@ -47,8 +47,8 @@ def pi_deployment(vi,stpt_gtr,last_VI,stpt_op_loc,xprt_demo):
     
     # time at which to query the data
     query_time = datetime.now(tz=pytz.utc)  # have to provide current data in UTC time zone
-    time_gap_minutes = 15
-    start_time = query_time - timedelta(minutes=time_gap_minutes)
+    time_gap_days = 15
+    start_time = query_time - timedelta(days=time_gap_days)
     try:
         df = bd.get_part_data(start_time,query_time,'4261')
         df.to_csv('vi_data/eskind_backup_v1_1.csv',index=False)
@@ -71,7 +71,7 @@ def pi_deployment(vi,stpt_gtr,last_VI,stpt_op_loc,xprt_demo):
         cfile.write('{:.2f} \n'.format(stpt))
     cfile.close()
 
-    if (datetime.now()-last_VI)>timedelta(hours=2):  # TODO: change it to 30 days
+    if (datetime.now()-last_VI)>timedelta(days=15):
         # vi = ValIterFuncApprox(gamma=0.0,split=0.75)
         # train at the beginning
         poi.VI_train(vi)
@@ -102,9 +102,9 @@ if __name__ == "__main__":
 
         vi, stpt_gtr, last_VI=pi_deployment(vi, stpt_gtr, last_VI, stpt_op_loc=args.output_loc,xprt_demo=args.expert_demo)
         print("Completed a loop")
-        time.sleep(timedelta(minutes=15).seconds)
+        time.sleep(timedelta(minutes=5).seconds)
 
-        if datetime.now()>datetime(year=2021,month=6,day=1,hour=16):
-            break
+        # if datetime.now()>datetime(year=2021,month=6,day=1,hour=16):
+        #     break
     print("Script Ended")
 
