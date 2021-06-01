@@ -104,7 +104,7 @@ if __name__ == "__main__":
         print("Completed a loop")
         time.sleep(timedelta(minutes=15).seconds)
 
-        if datetime.now()>datetime(year=2021,month=5,day=28,hour=16):
+        if datetime.now()>datetime(year=2021,month=6,day=1,hour=16):
             break
     print("Script Ended")
 
