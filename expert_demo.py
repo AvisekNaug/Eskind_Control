@@ -33,11 +33,11 @@ class set_point_generator():
             stpt = 61.0
             
         if sah>60:
-            stpt = stpt + 0.5
+            stpt = stpt + 0.2
 
         if self.pred_once:
             stpt = self.old_stpt+np.clip(stpt-self.old_stpt,
-                                         a_max=+0.09,a_min=-0.09) \
+                                         a_max=+0.30,a_min=-0.30) \
                                         +np.random.normal(0.0,0.2)
         self.old_stpt = stpt
         self.pred_once = True
