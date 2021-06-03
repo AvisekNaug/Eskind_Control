@@ -18,7 +18,7 @@ conda env create --file environment.yml
 ```
 
 Activate the environment
-```
+```bash
 conda activate eskind_pc
 ```
 
