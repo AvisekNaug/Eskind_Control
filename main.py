@@ -22,8 +22,8 @@ def xprt_dm(stpt_gtr, stpt_op_loc):
         stpt_op_loc += '/'
     # time at which to query the data
     query_time = datetime.now(tz=pytz.utc)  # have to provide current data in UTC time zone
-    time_gap_days = 15
-    start_time = query_time - timedelta(days=time_gap_days)
+    time_gap_minutes = 15
+    start_time = query_time - timedelta(minutes=time_gap_minutes)
     try:
         df = bd.get_part_data(start_time,query_time,'4261')
         df.to_csv('ed_data/eskind_backup_v1_0.csv',index=False)
@@ -47,8 +47,8 @@ def pi_deployment(vi,stpt_gtr,last_VI,stpt_op_loc,xprt_demo):
     
     # time at which to query the data
     query_time = datetime.now(tz=pytz.utc)  # have to provide current data in UTC time zone
-    time_gap_days = 15
-    start_time = query_time - timedelta(days=time_gap_days)
+    time_gap_minutes = 15
+    start_time = query_time - timedelta(minutes=time_gap_minutes)
     try:
         df = bd.get_part_data(start_time,query_time,'4261')
         df.to_csv('vi_data/eskind_backup_v1_1.csv',index=False)
