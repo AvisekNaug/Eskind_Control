@@ -101,7 +101,7 @@ if __name__ == "__main__":
     while True:
 
         vi, stpt_gtr, last_VI=pi_deployment(vi, stpt_gtr, last_VI, stpt_op_loc=args.output_loc,xprt_demo=args.expert_demo)
-        print("Completed a loop")
+        #print("Completed a loop")
         time.sleep(timedelta(minutes=5).seconds)
 
         # if datetime.now()>datetime(year=2021,month=6,day=1,hour=16):
