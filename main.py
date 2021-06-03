@@ -22,7 +22,7 @@ def xprt_dm(stpt_gtr, stpt_op_loc):
         stpt_op_loc += '/'
     # time at which to query the data
     query_time = datetime.now(tz=pytz.utc)  # have to provide current data in UTC time zone
-    time_gap_minutes = 15
+    time_gap_minutes = 25
     start_time = query_time - timedelta(minutes=time_gap_minutes)
     try:
         df = bd.get_part_data(start_time,query_time,'4261')
@@ -47,7 +47,7 @@ def pi_deployment(vi,stpt_gtr,last_VI,stpt_op_loc,xprt_demo):
     
     # time at which to query the data
     query_time = datetime.now(tz=pytz.utc)  # have to provide current data in UTC time zone
-    time_gap_minutes = 15
+    time_gap_minutes = 25
     start_time = query_time - timedelta(minutes=time_gap_minutes)
     try:
         df = bd.get_part_data(start_time,query_time,'4261')
