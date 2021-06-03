@@ -32,7 +32,7 @@ def xprt_dm(stpt_gtr, stpt_op_loc):
     oat,sah = df[['AHU_1 outdoorAirTemp','AHU_1 supplyAirHumidity']].iloc[-1,:].to_numpy()
     stpt = stpt_gtr.online_predictor(oat,sah=sah)
 
-    with open(stpt_op_loc+'eskind_stpt_v1_0.csv', 'a') as cfile:
+    with open(stpt_op_loc+'eskind_stpt_v1_0.csv', 'w') as cfile:
         cfile.write('{:.2f} \n'.format(stpt))
     cfile.close()
 
@@ -67,7 +67,7 @@ def pi_deployment(vi,stpt_gtr,last_VI,stpt_op_loc,xprt_demo):
     # get best action 
     stpt = axn_candidates[np.argmax(Q_sa)]
 
-    with open('vi_data/eskind_stpt_v1_1.csv', 'a') as cfile:
+    with open('vi_data/eskind_stpt_v1_1.csv', 'w') as cfile:
         cfile.write('{:.2f} \n'.format(stpt))
     cfile.close()
 
