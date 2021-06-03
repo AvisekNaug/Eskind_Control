@@ -31,5 +31,6 @@ Launch the script
 ```bash
 nohup python main.py > main.out
 ```
+
 In the above command you can optionally use --output_loc argument to specify where to output the csv file.
-Default location is '/app001/shared/'
+Default location is '/app001/shared/' similar to Alumni Hall deployment
