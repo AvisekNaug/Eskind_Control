@@ -22,9 +22,13 @@ Activate the environment
 conda activate eskind_pc
 ```
 
+```bash
+pip3 install tensorflow
+```
+
 Upgrade protobuf(ignore pip's dependency resolver error as long as protobuf is successfully installed)
 ```bash
-pip install --upgrade protobuf
+pip3 install --upgrade protobuf
 ```
 
 Launch the script
