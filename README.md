@@ -2,6 +2,8 @@
 This repository creates an initial controller for deployment at Eskind Library.
 The main set of commands to start the deployment is
 
+**Please note that either conda or miniconda being used has 64 bit arch.**
+
 clone the repository
 ```bash
 git clone https://github.com/AvisekNaug/Eskind_Control.git
@@ -20,15 +22,6 @@ conda env create --file environment.yml
 Activate the environment
 ```bash
 conda activate eskind_pc
-```
-
-```bash
-pip3 install tensorflow
-```
-
-Upgrade protobuf(ignore pip's dependency resolver error as long as protobuf is successfully installed)
-```bash
-pip3 install --upgrade protobuf
 ```
 
 Launch the script
