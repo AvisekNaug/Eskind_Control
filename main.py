@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     while True:
 
-        vi, stpt_gtr, last_VI=pi_deployment(stpt_gtr, stpt_op_loc=args.output_loc,xprt_demo=args.expert_demo)
+        stpt_gtr = pi_deployment(stpt_gtr, stpt_op_loc=args.output_loc,xprt_demo=args.expert_demo)
         time.sleep(timedelta(minutes=5).seconds)
 
         # if datetime.now()>datetime(year=2021,month=6,day=1,hour=16):
